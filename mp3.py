@@ -28,7 +28,9 @@ def search_youtube1(query):
         video_url = first_video["link"]
 
         global videoname
+        global videourl
         videoname = video_title
+        videourl = video_url
         print("Title:", video_title)
         print("URL:", video_url)
         return video_url
@@ -46,17 +48,15 @@ def search_youtube2(query):
         video_url = f'https://music.youtube.com/watch?v={first_track["videoId"]}'
         
         global videoname
+        global videourl
         videoname = video_title
+        videourl = video_url
         print("Title:", video_title)
         print("URL:", video_url)
         
         return video_url
     else:
         print("No tracks found for the given query.")
-
-def modify_global_variable(a):
-    global videourl
-    videourl = a
 
 
 user_query = input("Enter your query: ")
@@ -65,7 +65,6 @@ if(ip == 1):
     a = search_youtube1(user_query)
 else: 
     a = search_youtube2(user_query)
-modify_global_variable(a)
 
 
 # converter website 
