@@ -15,6 +15,8 @@ import re
 import os
 import shutil
 
+
+# getting the link of the audio
 videourl = ""
 videoname = ""
 
@@ -66,6 +68,9 @@ if(ip == 1):
 else: 
     a = search_youtube2(user_query)
 
+
+
+# conversion code starts
 
 # converter website 
 # url = "https://ytmp3.nu/nBlF/"
