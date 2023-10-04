@@ -63,7 +63,7 @@ def search_youtube2(query):
 
 user_query = input("Enter your query: ")
 ip = input("From where [1. Youtube  2. YT Music] : ")
-if(ip == 1): 
+if(ip == '1'): 
     a = search_youtube1(user_query)
 else: 
     a = search_youtube2(user_query)
