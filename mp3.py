@@ -15,8 +15,6 @@ import re
 import os
 import shutil
 
-
-# getting the link of the audio
 videourl = ""
 videoname = ""
 
@@ -62,15 +60,14 @@ def search_youtube2(query):
 
 
 user_query = input("Enter your query: ")
+print()
 ip = input("From where [1. Youtube  2. YT Music] : ")
-if(ip == '1'): 
+
+if(ip == '1'):
     a = search_youtube1(user_query)
-else: 
+else:  
     a = search_youtube2(user_query)
 
-
-
-# conversion code starts
 
 # converter website 
 # url = "https://ytmp3.nu/nBlF/"
@@ -102,12 +99,13 @@ try:
     # YouTube/ YT Music video link
     youtube_link = videourl
     search_input.send_keys(youtube_link)
-
+    element = driver.find_element(By.ID, 'audioMode-true')
+    element.click()
     # Submit the form (press Enter)
     search_input.send_keys(Keys.RETURN)
 
     # Wait for some time (you can adjust this as needed)
-    time.sleep(20)
+    time.sleep(30)
 
     # Locate and click the "Download" button (you need to inspect the page to find the correct element)
     # element = driver.find_element(By.XPATH, "//a[contains(text(), 'Download')]")
@@ -128,5 +126,5 @@ finally:
 
 
 # method to get the downloaded file name
-filename = max([os.path.join('C:/Users/ASUS/Downloads', f) for f in os.listdir('C:/Users/ASUS/Downloads')], key=os.path.getctime)
-shutil.move(filename,os.path.join('C:/Users/ASUS/Downloads',videoname + '.mp3'))
+filename = max([os.path.join(r'C:/Users/ASUS/Downloads', f) for f in os.listdir(r'C:/Users/ASUS/Downloads')], key=os.path.getctime)
+shutil.move(filename,os.path.join(r'C:/Users/ASUS/Downloads',videoname + '.mp3'))
