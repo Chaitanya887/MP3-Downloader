@@ -105,7 +105,7 @@ try:
     search_input.send_keys(Keys.RETURN)
 
     # Wait for some time (you can adjust this as needed)
-    time.sleep(30)
+    time.sleep(20)
 
     # Locate and click the "Download" button (you need to inspect the page to find the correct element)
     # element = driver.find_element(By.XPATH, "//a[contains(text(), 'Download')]")
